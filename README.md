@@ -33,3 +33,7 @@ https://www.google.com/intl/zh-TW/chrome/?brand=FKPE&gclid=CjwKCAjw6fCCBhBNEiwAe
 
 git clone https://github.com/Andy-CH-BO-AN/auto-clock-in.git
 ![img_1.png](img_1.png)
+
+## 步驟四
+
+### 進入資料夾
