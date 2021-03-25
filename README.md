@@ -1,5 +1,7 @@
 #說明書
+
 ##步驟一
+
 ###下載python
 
 https://www.python.org/downloads/
@@ -11,12 +13,16 @@ https://git-scm.com/downloads
 ###下載Chrome
 
 https://www.google.com/intl/zh-TW/chrome/?brand=FKPE&gclid=CjwKCAjw6fCCBhBNEiwAem5SO1H__36dYPSUqPo5RWYWyQe4eM_PMXI1QJGSmtA5y3zBnz3I1vgBLBoCGWwQAvD_BwE&gclsrc=aw.ds
+
 ##步驟二
 ![img.png](img.png)
 
 ###安裝python
+
 記得勾選Add Python3.8 to Path
+
 ###安裝git
+
 ###安裝chrome
 
 ##步驟三
