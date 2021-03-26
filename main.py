@@ -1,9 +1,16 @@
 import json
+import sys
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.common.by import By
 
 chrome_path = ChromeDriverManager().install()
 driver = webdriver.Chrome(chrome_path)
+clock_in = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[2]/div[1]/div[1]/div'
+clock_out = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[2]/div[1]/div[2]/div'
+clock = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[1]/div[3]/div[1]'
 
 
 def main():
@@ -24,23 +31,26 @@ def login(info):
 
 
 def online():
-    driver.find_element_by_id('clockin').click()
+    driver.find_element_by_xpath(clock_in).click()
 
 
 def offline():
-    driver.find_element_by_id('clockout').click()
+    driver.find_element_by_xpath(clock_out).click()
 
 
 def select_action():
-    choice = input('按0上班卡，按1下班卡：')
-    if int(choice) == 0:
+    WebDriverWait(driver, 5, 0.5). \
+        until(ec.visibility_of_element_located((By.XPATH, clock)))
+    parameter = sys.argv[1]
+    if int(parameter) == 0:
         online()
-    elif int(choice) == 1:
+    elif int(parameter) == 1:
         offline()
+    elif int(parameter) == 2:
+        print(8888888888888)
     else:
         raise Exception('請重新選擇')
 
 
 if __name__ == '__main__':
     main()
-    driver.quit()
