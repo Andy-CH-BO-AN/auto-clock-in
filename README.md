@@ -9,7 +9,7 @@ https://www.google.com/intl/zh-TW/chrome/?brand=FKPE&gclid=CjwKCAjw6fCCBhBNEiwAe
 ## 步驟二
 ![img.png](img.png)
 ### 安裝python
-記得勾選Add Python3.8 to Path
+記得勾選Add Python to Path
 ### 安裝git
 ### 安裝chrome
 ## 步驟三
@@ -19,7 +19,8 @@ git clone https://github.com/Andy-CH-BO-AN/auto-clock-in.git
 ![img_1.png](img_1.png)
 ## 步驟四
 ### 進入剛下載的資料夾
-### 在資料夾的路徑輸入cmd
+### 在資料夾的路徑輸入cmd，按Enter
+### 開啟命令提示字元(cmd)
 ![img_2.png](img_2.png)
 ### 輸入命令
 pip install -r requirements.txt
@@ -30,4 +31,8 @@ pip install -r requirements.txt
 ### 在資料夾的路徑輸入cmd
 ### ![img_2.png](img_2.png)
 ### 輸入命令
-python main.py
+### 依照指示填入上下班
+上班 python main.py 0
+下班 python main.py 1
+## 步驟六
+### 排程
