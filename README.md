@@ -29,10 +29,18 @@ pip install -r requirements.txt
 ### 進入該資料夾
 ### 點擊config.json，輸入自己的帳密。
 ### 在資料夾的路徑輸入cmd
-### ![img_2.png](img_2.png)
-### 輸入命令
-### 依照指示填入上下班
+![img_3.png](img_3.png)
+### 輸入上下班命令
 上班 python main.py 0
 下班 python main.py 1
+### 確認是否有正確執行，成功即可進入下一步驟，失敗可以扣github星星QAQ
 ## 步驟六
-### 排程
+### 更改bat檔
+![img_4.png](img_4.png)
+###對clockin.bat/clockout.bat點擊右鍵，選擇編輯
+![img_5.png](img_5.png)
+###複製專案資料夾路徑
+![img_6.png](img_6.png)
+###至cd後面貼上，按ctrl + s(儲存檔案)
+###成功後可以點擊bat檔測試是否可成功打卡
+## 步驟六
