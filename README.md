@@ -65,7 +65,7 @@ pip install -r requirements.txt
 ### 點擊瀏覽，若是設定上班排程選擇clockin.bat
 ### 下班排程選擇clockout.bat
 ![img_15.png](img_15.png)
-### 選擇確定後再選擇確定
+### 選擇開啟後再選擇確定
 ![img_16.png](img_16.png)
 ### 點擊左上角的工作排程程式庫
 ![img_17.png](img_17.png)
