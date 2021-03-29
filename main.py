@@ -5,6 +5,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
+import datetime
+import time
+import random
 
 chrome_path = ChromeDriverManager().install()
 driver = webdriver.Chrome(chrome_path)
@@ -32,10 +35,12 @@ def login(info):
 
 def online():
     driver.find_element_by_xpath(clock_in).click()
+    log('clockin')
 
 
 def offline():
     driver.find_element_by_xpath(clock_out).click()
+    log('clockout')
 
 
 def select_action():
@@ -52,5 +57,13 @@ def select_action():
         raise Exception('請重新選擇')
 
 
+def log(status):
+    with open('log.txt', 'a') as f:
+        f.write(f'\n{datetime.datetime.now()} {status}')
+        f.close()
+
+
 if __name__ == '__main__':
+    time.sleep(random.randint(0, 120))
     main()
+    driver.quit()

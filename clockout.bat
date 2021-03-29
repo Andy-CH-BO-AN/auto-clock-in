@@ -1,5 +1,5 @@
 @echo off  
 C:
 cd C:\workplace\mmm
-start python main.py 0
+start python main.py 1
 exit
