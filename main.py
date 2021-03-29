@@ -64,6 +64,9 @@ def log(status):
 
 
 if __name__ == '__main__':
-    time.sleep(random.randint(0, 120))
+    random_wait = random.randint(0, 120)
+    print(random_wait)
+    time.sleep(random_wait)
     main()
+    time.sleep(1)
     driver.quit()
