@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ### 待安裝完畢
 ## 步驟五
 ### 進入該資料夾
-### 點擊config.json，輸入自己的帳密。
+### 按右鍵編輯config.json，輸入自己的帳密。
 ### 在資料夾的路徑輸入cmd
 ![img_3.png](img_3.png)
 ### 輸入上下班命令
