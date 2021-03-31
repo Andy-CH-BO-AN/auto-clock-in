@@ -9,6 +9,7 @@ import datetime
 import time
 import random
 
+
 chrome_path = ChromeDriverManager().install()
 driver = webdriver.Chrome(chrome_path)
 clock_in = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[2]/div[1]/div[1]/div'
@@ -16,7 +17,28 @@ clock_out = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[2]/div[1]
 clock = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[1]/div[3]/div[1]'
 
 
+def check_time(now=datetime.datetime.now()):
+    holiday_list = []
+    workday_list = []
+    if now.weekday() <= 4:
+        with open('holiday.txt', 'r') as f:
+            for line in f.readlines():
+                holiday_list.append(line)
+            if line in holiday_list:
+                return 'holiday'
+        return 'work'
+    else:
+        with open('workday.txt', 'r') as f:
+            for line in f.readlines():
+                workday_list.append(line)
+            if line in workday_list:
+                return 'work'
+        return 'holiday'
+
+
 def main():
+    if check_time() == 'holiday':
+        driver.quit()
     with open("config.json", "r") as f:
         info = json.load(f)
     print(info)
@@ -68,7 +90,7 @@ def log(status):
 if __name__ == '__main__':
     random_wait = random.randint(0, 120)
     print(random_wait)
-
+    #
     main()
     time.sleep(1)
     driver.quit()

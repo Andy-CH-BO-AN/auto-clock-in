@@ -30,6 +30,7 @@ pip install -r requirements.txt
 ### 編輯config.json，可以選擇記事本編輯，輸入自己的帳密。
 ![img_20.png](img_20.png)
 ![img_21.png](img_21.png)
+### 填寫特休日至holiday.txt，臨時補班日至work.txt
 ### 在資料夾的路徑輸入cmd
 ![img_3.png](img_3.png)
 ### 輸入測試命令
@@ -75,4 +76,4 @@ python main.py 2
 ### 也可以點擊右鍵手動執行
 ![img_19.png](img_19.png)
 ### 記得電腦要保持開機
-### 請特休的時候調整一下排程，祝龍體安康。
+### 請特休的時候記得填寫特休日進入holiday.txt,且格式需要相同
