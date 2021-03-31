@@ -44,8 +44,8 @@ def main():
             info = json.load(f)
         print(info)
         url = info["url"]
-        # driver.get(url)
-        # login(info)
+        driver.get(url)
+        login(info)
 
 
 def login(info):
