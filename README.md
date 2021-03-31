@@ -32,11 +32,8 @@ pip install -r requirements.txt
 ![img_21.png](img_21.png)
 ### 在資料夾的路徑輸入cmd
 ![img_3.png](img_3.png)
-### 輸入上下班命令
-### 上班 
-python main.py 0
-### 下班 
-python main.py 1
+### 輸入測試命令
+python main.py 2
 ### 確認是否有正確執行，成功即可進入下一步驟，失敗可以扣github星星QAQ
 ## 步驟六
 ### 更改bat檔

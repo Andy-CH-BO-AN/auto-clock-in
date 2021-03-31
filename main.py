@@ -48,11 +48,13 @@ def select_action():
         until(ec.visibility_of_element_located((By.XPATH, clock)))
     parameter = sys.argv[1]
     if int(parameter) == 0:
+        time.sleep(random_wait)
         online()
     elif int(parameter) == 1:
+        time.sleep(random_wait)
         offline()
     elif int(parameter) == 2:
-        print(8888888888888)
+        print('testing')
     else:
         raise Exception('請重新選擇')
 
@@ -66,7 +68,7 @@ def log(status):
 if __name__ == '__main__':
     random_wait = random.randint(0, 120)
     print(random_wait)
-    time.sleep(random_wait)
+
     main()
     time.sleep(1)
     driver.quit()
