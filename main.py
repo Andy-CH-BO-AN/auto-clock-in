@@ -9,7 +9,6 @@ import datetime
 import time
 import random
 
-
 chrome_path = ChromeDriverManager().install()
 driver = webdriver.Chrome(chrome_path)
 clock_in = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[2]/div[1]/div[1]/div'
@@ -18,33 +17,35 @@ clock = '/html/body/div[1]/div[3]/div/div[1]/div[5]/div[1]/div/div[1]/div[3]/div
 
 
 def check_time(now=datetime.datetime.now()):
-    holiday_list = []
-    workday_list = []
     if now.weekday() <= 4:
         with open('holiday.txt', 'r') as f:
             for line in f.readlines():
-                holiday_list.append(line)
-            if line in holiday_list:
-                return 'holiday'
+                if now.strftime("%Y-%m-%d") == line.replace('\n', ''):
+                    print('holiday')
+                    return 'holiday'
+        print('work')
         return 'work'
     else:
         with open('workday.txt', 'r') as f:
             for line in f.readlines():
-                workday_list.append(line)
-            if line in workday_list:
-                return 'work'
+                if now.strftime("%Y-%m-%d") == line.replace('\n', ''):
+                    print('work')
+                    return 'work'
+        print('holiday')
         return 'holiday'
 
 
 def main():
     if check_time() == 'holiday':
         driver.quit()
-    with open("config.json", "r") as f:
-        info = json.load(f)
-    print(info)
-    url = info["url"]
-    driver.get(url)
-    login(info)
+        sys.exit()
+    else:
+        with open("config.json", "r") as f:
+            info = json.load(f)
+        print(info)
+        url = info["url"]
+        # driver.get(url)
+        # login(info)
 
 
 def login(info):
