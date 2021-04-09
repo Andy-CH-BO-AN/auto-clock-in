@@ -38,6 +38,7 @@ def check_time(now=datetime.datetime.now()):
 def main():
     if check_time() == 'holiday':
         driver.quit()
+        log("It's holiday!!")
         sys.exit()
     else:
         with open("config.json", "r") as f:
@@ -77,9 +78,10 @@ def select_action():
         time.sleep(random_wait)
         offline()
     elif int(parameter) == 2:
-        print('testing')
+        log("testing")
     else:
-        raise Exception('請重新選擇')
+        log(Exception('something went wrong'))
+        raise Exception('something went wrong')
 
 
 def log(status):
@@ -89,9 +91,11 @@ def log(status):
 
 
 if __name__ == '__main__':
-    random_wait = random.randint(0, 120)
+    random_wait = 1
     print(random_wait)
-    #
-    main()
+    try:
+        main()
+    except Exception as E:
+        log(f"Error:{E}")
     time.sleep(1)
     driver.quit()
