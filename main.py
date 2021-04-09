@@ -91,7 +91,7 @@ def log(status):
 
 
 if __name__ == '__main__':
-    random_wait = 1
+    random_wait = random.randint(0, 120)
     print(random_wait)
     try:
         main()
